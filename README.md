@@ -1,3 +1,10 @@
+# 👤 Identitas
+
+| Nama | Sava Tiara Nathania           |
+| ------ | ------------- |
+| NIM   | 242410102009 |
+| Kelas   | PAA B    | 
+
 # 📚 REST API Manajemen Perpustakaan
 Sistem backend berbasis REST API untuk mengelola data perpustakaan, mencakup manajemen pengguna, koleksi buku, dan transaksi peminjaman buku. API dilengkapi dengan autentikasi menggunakan JSON Web Token (JWT).
 
@@ -19,16 +26,50 @@ Relasi antar entitas: seorang user dapat meminjam banyak buku, dan satu buku dap
 * Dokumentasi API - Swagger
 * IDE - Visual Studio 2022
 
-#⚙️ Langkah Instalasi dan Cara Menjalankan Project
+# ⚙️ Langkah Instalasi dan Cara Menjalankan Project
 1. Clone Repository
-   git clone https://github.com/USERNAME/NAMA-REPO.git
-   cd NAMA-REPO
+   * git clone https://github.com/USERNAME/NAMA-REPO.git
+   * cd NAMA-REPO
 2. Import Database
 3. Konfigurasi Connection String di file appsetting.json
 4. Install NuGet Package
 5. Jalankan Project dengan tekan tombol Run
 
-#🗄️ Cara Import Database
+# 🗄️ Cara Import Database
 1. Klik kanan database perpustakaan, pilih query tool
 2. Klik ikon open file (folder) pilih file perpustakaan.sql
 3. Klik tombol Execute/Run
+
+# 📡 Daftar Endpoint Lengkap
+
+| Method | URL             | Keterangan                           | Auth  |
+| ------ | --------------- | ------------------------------------ | ----- |
+| GET    | /api/users      | Mengambil semua data user            | ✅ JWT |
+| GET    | /api/users/{id} | Mengambil detail user berdasarkan ID | ✅ JWT |
+| PUT    | /api/users/{id} | Mengupdate data user berdasarkan ID  | ✅ JWT |
+| DELETE | /api/users/{id} | Menghapus user berdasarkan ID        | ✅ JWT |
+
+| Method | URL             | Keterangan                           | Auth          |
+| ------ | --------------- | ------------------------------------ | ------------- |
+| GET    | /api/books      | Mengambil semua data buku            | ❌ Tidak perlu |
+| GET    | /api/books/{id} | Mengambil detail buku berdasarkan ID | ❌ Tidak perlu |
+| POST   | /api/books      | Menambahkan buku baru                | ✅ JWT         |
+| PUT    | /api/books/{id} | Mengupdate data buku berdasarkan ID  | ✅ JWT         |
+| DELETE | /api/books/{id} | Menghapus buku berdasarkan ID        | ✅ JWT         |
+
+| Method | URL                         | Keterangan                                   | Auth  |
+| ------ | --------------------------- | -------------------------------------------- | ----- |
+| GET    | /api/borrowings             | Mengambil semua data peminjaman              | ✅ JWT |
+| GET    | /api/borrowings/{id}        | Mengambil detail peminjaman berdasarkan ID   | ✅ JWT |
+| POST   | /api/borrowings             | Mencatat peminjaman buku baru                | ✅ JWT |
+| PUT    | /api/borrowings/{id}/return | Mengembalikan buku (mengisi tanggal_kembali) | ✅ JWT |
+| DELETE | /api/borrowings/{id}        | Menghapus riwayat peminjaman                 | ✅ JWT |
+
+| Method | URL           | Keterangan                      | Auth          |
+| ------ | ------------- | ------------------------------- | ------------- |
+| POST   | /api/register | Registrasi user baru            | ❌ Tidak perlu |
+| POST   | /api/login    | Login dan mendapatkan JWT token | ❌ Tidak perlu |
+
+# 🎥 Video Presentasi
+* 📺 Link video presentasi: 
+https://youtu.be/QCdVfChQIzQ
